@@ -1,0 +1,21 @@
+{
+  "name": "trello_clone",
+  "authors": [
+    "Minh-Huynh <minhh1990@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "handlebars": "^4.0.5"
+  }
+}
