@@ -9,8 +9,12 @@
   </head>
   <body>
   <script type="text/x-handlebars-template" id="board_menu_entry">
-	<span class="blue_tile"></span><span class="board">{{board_name}}<img class="remove_icon" src="../public/img/minus.png" /></span>
+	<a href="#board/{{cid}}"><span class="blue_tile"></span><span class="board">{{board_name}}<img class="remove_icon" src="../public/img/minus.png" /></span></a>
   </script>
+  <script type="text/x-handlebars-template" id="comment_template">
+	<span class="comment"><input class="comment_body" value="{{comment_body}}"></input><span class="delete_comment">+</span></span>
+  </script>
+
   <script type="text/x-handlebars-template" id="board_template">
 		<div id="board_main_header">
 		<input class="board_title"value="{{board_name}}">
@@ -19,13 +23,30 @@
 		<div class="list_container">
 		</div>	
 		<div class="add_list_container">
-			<input placeholder="Add a list..."></input>
+			<input class="list_name_input"  placeholder="Add a list..."></input>
 			<div class="add_list_buttons">
 				<button class="add_list_btn">Save</button>
 				<span class="close_add_task">+</span>
 			</div>
 		</div>
   </script>
+ <script type="text/x-handlebars-template" id="task_form_template">
+	<a class="task_link" href="#board/{{board_id}}/list/{{list_id}}/task/{{task_id}}"><div class="task_name">{{task_name}}<span class="delete_task">+</span></div></a>
+		<div class="modal_layer">
+		<div class="task_edit_form">
+			<div class="close_button">+</div>
+			<input class="task_name_field" value="{{task_name}} "></input>
+			<div class="list_field">in List {{list_name}}</div>
+			<div class="comment_title">Add Comment</div>
+			<textarea placeholder="Write a comment..." rows=6 cols=85 class ="comment_field"></textarea>
+			<button name="save"class="save_comment_button">Send</button>
+			<div class="comments_section_title">Comments</div>
+			<div class="comments_container">
+			</div>
+		</div>
+	
+	</div>
+</script>
 
   <script type="text/x-handlebars-template" id="list_template">
 	
@@ -33,12 +54,9 @@
 			{{list_name}}
 		</div>
 		<div class="tasks">
-			<div class="task">
-				Configure, set up workstations
-			</div>
 		</div>
 			<div class="add_task_form">
-				<textarea class="task_name_input" rows=5 cols=20></textarea>
+				<textarea class="task_name_input" rows=3 cols=20></textarea>
 				<button class="add_task_btn">Add</button>
 				<span class="close_add_task">+</span> 		
 			</div>
@@ -47,37 +65,18 @@
 	
 
 </script>
-  	<div id="modal_layer">
-		<div id="task_edit_form">
-			<div id="close_button">+</div>
-			<input id="task_name_field" value="Title Goes Here"></input>
-			<div id="list_field">in List JPSC2</div>
-			<div id="comment_title">Add Comment</div>
-			<textarea placeholder="Write a comment..." rows=6 cols=85 id ="comment_field"></textarea>
-			<button name="save"id="save_comment_button">Send</button>
-			<div id="comments_section_title">Comments</div>
-			<div id="comments_container">
-				<span class="comment"><input class="comment_body" value="This is a comment"></input><span class="delete_comment">+</span></span>
-				<span class="comment"><input class="comment_body" value="This is a another long comment"></input><span class="delete_comment">+</span></span>
-			</div>
-		</div>
-	
-	</div>
-
-	<div id="header">
+  		<div id="header">
 		<span id="boards_btn">Boards</span>		
 	</div>
 	<div id="board_menu">
 		<div id="my_boards">
 			<div id="my_board_title">
-				My Boards<span id="expand_btn"></span>
+				My Boards
 			</div>
 			<div id="new_board_input">
 				<input name="board_name" id="board_name"  placeholder="Enter name of new board"></input>
 			</div>
 			<div id="all_boards">
-
-				<span class="blue_tile"></span><span class="board">Ecc Collaboration<img class="remove_icon" src="../public/img/minus.png" /></span>
 			</div>
 			
 		</div>

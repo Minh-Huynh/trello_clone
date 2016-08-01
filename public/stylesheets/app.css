@@ -2,6 +2,12 @@
 	margin: 0;
 	padding: 0;
 }
+.spot{
+	height: 40px;
+	background-color: gray;
+	width: 90%;
+	margin: 0 auto;
+}
 .board_title{
 	color: white;
 	font-weight: bold;
@@ -35,8 +41,9 @@
 	background-color: white;
 	margin: 5px auto;
 }
-#modal_layer{
+.modal_layer{
 	position: absolute;
+	display:none;
 	left: 0;
 	top: 0;
 	background-color: rgba(0,0,0,0.4);
@@ -44,7 +51,7 @@
 	height: 100%;
 	z-index: 20;
 }
-#close_button{
+.close_button{
 	float:right;
 	font-size: 40px;
 	padding-right: 10px;
@@ -57,6 +64,9 @@
 	margin-left: 20px;
 	cursor: pointer;
 }
+.task_name{
+padding-left: 10px;
+}
 .task_name_input{
     margin: 0 auto;
     width: 95%;
@@ -64,14 +74,15 @@
     display: block;
     border-radius: 4px;
     resize: none;
-    font-size: 17px;
+    font-size: 15px;
 }
 .add_task_form{
 	display: none;
 }
 .add_task_btn, .add_list_btn{
-	    font-size: 20px;
-    padding: 10px;
+	    font-size: 15px;
+    box-shadow: inset 0px 0px 10px gray;
+    padding: 8px 15px;
     border: none;
     color: white;
     background-color: #61bd4f;
@@ -84,8 +95,21 @@
     font-size: 30px;
     display: inline-block;
     cursor: pointer;
-} 
-#task_edit_form{
+}
+.delete_task{
+	transform:rotate(45deg);
+	font-size: 25px;
+	display: inline-block;
+	cursor: pointer;
+	float: right;
+	line-height: 21px;
+	padding-right: 10px;
+}
+.task_link{
+text-decoration: none;
+color: black;
+}
+.task_edit_form{
 	z-index: 21;
 	background-color: #edeff0;
 	position: absolute;
@@ -95,17 +119,17 @@
 	border-radius: 3px;
 	padding-bottom: 15px;
 }
-#task_name_field{
+.task_name_field{
 	background-color: #edeff0;
 	border-radius: 3px;
 	width: 85%;
 	border: none;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	margin: 10px auto;
 	display: block;
 }
-#list_field{
+.list_field{
 	width: 30%;
 	display: block;
 	margin-left: 30px;
@@ -127,10 +151,10 @@
 	padding: 10px;
 	font-weight: bold;
 }
-#comment_title, #comment_field, #comments_section_title, #comments_container{
+.comment_title, .comment_field, .comments_section_title, .comments_container{
 	margin-left: 30px;
 }
-#comments_container{
+.comments_container{
 	margin-top: 20px;
 }
 .comment{
@@ -140,18 +164,23 @@
 	display: table;
 	margin-top: 10px;
 }
-#comment_title, #comments_section_title{
+.comment_title, .comments_section_title{
 	font-weight: bold;
 	font-size: 15px;
 	margin-top: 10px;
 }
-#comment_field{
+.comment_field{
+	box-shadow: 0px 2px 2px 2px gray;
+	padding: 10px;
+	border-radius: 3px;	
 	resize: none;
 	border: none;
 	margin-top: 10px;
+	width: 90%;
 }
-#save_comment_button{
+.save_comment_button{
 	background-color: #61bd4f;
+	box-shadow: inset 0px 0px 10px gray;
 	color: white;
 	border: none;
 	font-size: 15px;
@@ -166,7 +195,7 @@
 	display: inline-block;
 }
 .add_list_container input{
-	font-size: 18px;
+	font-size: 15px;
 	background-color: #006ba9;
 	border:none;
 	outline: none;
@@ -181,9 +210,10 @@
 .add_list_container.selected{
 	background-color:#e2e4e6;
 	padding: 7px;
+	border-radius: 3px;
 }
 .add_list_container.selected input{
-	font-size: 18px;
+	font-size: 14px;
 	background-color: #d6d8da;
 	border:none;
 	width: 250px;
@@ -250,14 +280,14 @@ body{
 }
 #my_board_title{
 	line-height: 25px;
-	margin-bottom: 10px;
 }
 #board_name{
 	margin: 10px;
 	width: 240px;
-	font-size: 20px;
+	font-size: 15px;
 	border-radius: 4px;
 	margin-left: 0;
+	line-height: 20px;
 }
 
 
